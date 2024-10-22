@@ -1,0 +1,25 @@
+{
+  "name": "streamtranslate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --noEmit && vite build",
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@crxjs/vite-plugin": "^1.0.14",
+    "@types/chrome": "^0.0.279",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "typescript": "^5.6.3",
+    "vite": "^2.9.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.8"
+  }
+}
