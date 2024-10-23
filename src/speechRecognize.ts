@@ -13,21 +13,29 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-const Recognition = (resultsCallBack: (text: string) => void) => {
+const Recognition = (
+  resultsCallBack: (
+    text: string,
+    shouldTranslate: boolean,
+    finish: boolean
+  ) => void
+) => {
   recognition.onresult = (event: any) => {
     for (let i = event.resultIndex; i < event.results.length; ++i) {
       const text = event.results[i][0].transcript;
       const recognizedWordCount: number = text.split(" ").length;
       if (event.results[i].isFinal) {
-        resultsCallBack(text);
+        resultsCallBack(text, true, true);
         lastRecognizedWordCount = 0;
         recognition.stop();
       } else {
         if (text.includes("니다")) {
           recognition.stop();
         } else if (recognizedWordCount >= lastRecognizedWordCount + 5) {
-          resultsCallBack(text);
+          resultsCallBack(text, true, false);
           lastRecognizedWordCount = recognizedWordCount;
+        } else {
+          resultsCallBack(text, false, false);
         }
       }
     }

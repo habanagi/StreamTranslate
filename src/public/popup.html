@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stream Translate Popup</title>
+    <style>
+        .container {
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.5);
+            resize: both;
+            overflow: hidden;
+            width: 400px;
+            height: 95px;
+        }
+
+        .original-text {
+            text-align: center;
+            font-size: 12px;
+            color: white;
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+        }
+
+        .translated-text {
+            font-weight: bold;
+            text-align: center;
+            font-size: 16px;
+            color: white;
+            position: absolute;
+            top: 25px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="move_bar" style="text-align: center;">
+            <div
+                style="display: inline-block; width: 50px; height: 5px; background-color: white; border-radius: 2.5px;">
+            </div>
+        </div>
+        <div class="translated-text">Translated text goes here</div>
+        <div class="original-text">Original text goes here</div>
+    </div>
+
+</body>
+
+</html>
